@@ -1,5 +1,4 @@
-// WARNING: Don't check your actual API key into GitHub
-const MOVIE_DB_API_KEY = '2c3c0e8f1cb61b48987f056ae6727d36';
+const MOVIE_DB_API_KEY = 'YOUR_KEY';
 const MOVIE_DB_BASE_URL = 'https://api.themoviedb.org/3';
 
 const createMovieDbUrl = (relativeUrl, queryParams) => {
