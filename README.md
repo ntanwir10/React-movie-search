@@ -1,6 +1,6 @@
 # MOVIE BROWSER
  
-This is movie search WebApp build using Reactjs. I have used The Movie Database (TMDb) API movie API to fetch list of movies and display them. 
+This is movie search WebApp build using Reactjs and Redux. I have used The Movie Database (TMDb) API movie API to fetch list of movies and display them. 
 
 Link to TMDB's API https://www.themoviedb.org/documentation/api
 
