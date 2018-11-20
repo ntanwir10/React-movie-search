@@ -24,7 +24,8 @@ const styles = {
     top: 100,
   },
   TextField:{
-    color:'white'
+    color:'#ffffff',
+    
   }
 }
 
@@ -74,9 +75,8 @@ class MovieBrowser extends React.Component {
           showMenuIconButton={false} 
           style={styles.AppBar}  
           children= {
-            // <Input placeholder="Search…" />
-
-            < TextField style={styles.TextField} value = 'Search is on its way'  ></ TextField>
+            <TextField style={styles.TextField} placeholder='Search is on its way' 
+            onChange={e => console.log(e.currentTarget.value)}/>
           }
         />
         <div style={styles.Grid}>
@@ -96,7 +96,8 @@ class MovieBrowser extends React.Component {
 export default connect(
   // Map nodes in our state to a properties of our component
   (state) => ({
-    topMovies: state.movieBrowser.topMovies
+    topMovies: state.movieBrowser.topMovies,
+    currentMovies: state.movieBrowser.currentMovies
   }),
   // Map action creators to properties of our component
   { ...movieActions }

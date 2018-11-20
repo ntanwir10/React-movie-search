@@ -1,6 +1,13 @@
-import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+import {
+  createStore,
+  combineReducers,
+  compose,
+  applyMiddleware
+} from 'redux';
 import thunkMiddlware from 'redux-thunk';
-import { createLogger } from 'redux-logger'
+import {
+  createLogger
+} from 'redux-logger'
 import movieBrowserReducer from './modules/movie-browser/movie-browser.reducers';
 
 // The root reducer will serve as the parent for all other reducers
@@ -15,11 +22,8 @@ const rootReducer = combineReducers({
 // including the previous state, the action details, and the next state
 const loggerMiddleware = createLogger();
 
-const store = createStore(
-  // reducer
-  rootReducer,
-  // preloadedState
-  undefined,
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, /* preloadedState, */ composeEnhancers(
   // compose simply enables us to apply several store enhancers
   // Right now, we are only using applyMiddlware, so this is
   // just future-proofing our application
@@ -36,6 +40,6 @@ const store = createStore(
       loggerMiddleware
     )
   )
-);
+));
 
 export default store;
