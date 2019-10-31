@@ -1,33 +1,34 @@
-const MOVIE_DB_API_KEY = 'YOUR_KEY';
-const MOVIE_DB_BASE_URL = 'https://api.themoviedb.org/3';
+// const MOVIE_DB_API_KEY = 'cbe08db7';
+let baseUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=cbe08db7';
 
 const createMovieDbUrl = (relativeUrl, queryParams) => {
-  let baseUrl = `${MOVIE_DB_BASE_URL}${relativeUrl}?api_key=${MOVIE_DB_API_KEY}&language=en-US`;
+  // let baseUrl = `${MOVIE_DB_BASE_URL}${relativeUrl}?api_key=${MOVIE_DB_API_KEY}&language=en-US`;
   if (queryParams) {
-    Object.keys(queryParams)
-      .forEach(paramName => baseUrl += `&${paramName}=${queryParams[paramName]}`);
+    Object.keys(queryParams).forEach(
+      (paramName) => (baseUrl += `&${paramName}=${queryParams[paramName]}`),
+    );
   }
   return baseUrl;
-}
+};
 
 // WARNING: Must pass parameters like this: ({param1, param2})
 // for async action creator helper to work
-export const getTopMovies = async ({page}) => {
+export const getTopMovies = async ({ page }) => {
   const fullUrl = createMovieDbUrl('/movie/top_rated', {
-    page
+    page,
   });
   return fetch(fullUrl);
-}
+};
 
-export const searchMovies = async ({ page, query}) => {
+export const searchMovies = async ({ page, query }) => {
   const fullUrl = createMovieDbUrl('/search/movie', {
     page,
-    query
+    query,
   });
   return fetch(fullUrl);
-}
+};
 
-export const getMovieDetails = async ({movieId}) => {
+export const getMovieDetails = async ({ movieId }) => {
   const fullUrl = createMovieDbUrl(`/movie/${movieId}`);
   return fetch(fullUrl);
-}
+};

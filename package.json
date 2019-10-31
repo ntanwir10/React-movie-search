@@ -10,7 +10,8 @@
   "keywords": [
     "movie",
     "search",
-    "react"
+    "react",
+    "redux"
   ],
   "author": "Nauman Tanwir",
   "license": "ISC",
