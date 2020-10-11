@@ -16,11 +16,11 @@
   "author": "Nauman Tanwir",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "material-ui": "^0.20.2",
-    "react": "^16.4.2",
+    "react": "^16.13.1",
     "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.4.2",
+    "react-dom": "^16.13.1",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "redux": "^4.0.0",
@@ -39,6 +39,6 @@
     "style-loader": "^0.23.0",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.11.0"
   }
 }
